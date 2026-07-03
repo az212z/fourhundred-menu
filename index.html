@@ -1,0 +1,418 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>فورهاندرد 400 · Coffee 400mg — القائمة</title>
+<meta name="description" content="القائمة التفاعلية لمقهى فورهاندرد 400 للقهوة المختصة في خميس مشيط — اطلب عبر واتساب.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#183a34;        /* deep teal-green from the real menu */
+  --ink-2:#22514a;
+  --paper:#f3efe6;      /* warm paper */
+  --paper-2:#ece6d8;
+  --card:#ffffff;
+  --gold:#c69b57;       /* coffee gold accent */
+  --gold-2:#b0863f;
+  --cherry:#c8492f;     /* small cherry mark from logo */
+  --leaf:#3f7d54;
+  --muted:#6d6a60;
+  --line:rgba(24,58,52,.10);
+  --shadow:0 10px 30px rgba(24,58,52,.10);
+  --radius:20px;
+  --maxw:460px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Tajawal',system-ui,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 50% -10%, #e7ded0 0%, transparent 60%),
+    linear-gradient(180deg,#e9e2d4 0%, #ddd4c3 100%);
+  min-height:100vh;
+  line-height:1.6;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;background:var(--paper);
+  box-shadow:0 0 60px rgba(24,58,52,.18);min-height:100vh;position:relative;overflow-x:hidden}
+img{max-width:100%;display:block}
+
+/* ---------- HEADER ---------- */
+.hero{position:relative;padding:26px 22px 30px;color:#fff;overflow:hidden;
+  background:linear-gradient(160deg,#1c433c 0%, #123029 100%)}
+.hero::after{content:"";position:absolute;inset:0;opacity:.16;pointer-events:none;
+  background-image:radial-gradient(circle at 20% 30%, #fff 0 1px, transparent 1.5px);
+  background-size:26px 26px}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:2}
+.logo{display:flex;align-items:center;gap:10px}
+.logo .mark{width:52px;height:52px;flex:0 0 auto}
+.logo .name{font-weight:800;font-size:1.15rem;letter-spacing:.5px;line-height:1.15}
+.logo .name small{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:.8rem;letter-spacing:3px;color:var(--gold);margin-top:2px}
+.rating{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;padding:7px 12px;font-weight:700;font-size:.9rem;white-space:nowrap;
+  display:flex;align-items:center;gap:5px}
+.rating .star{color:#ffcf5c}
+.tagline{position:relative;z-index:2;margin:20px 2px 0;font-size:.98rem;color:#e7e0d1;font-weight:500}
+.tagline b{color:#fff;font-weight:700}
+.chips-note{position:relative;z-index:2;margin-top:14px;font-size:.78rem;color:#b9c9c2;
+  display:flex;align-items:center;gap:6px}
+
+/* ---------- SEARCH ---------- */
+.searchbar{position:relative;padding:16px 18px 4px;background:var(--paper)}
+.searchbar input{width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;
+  padding:13px 44px 13px 16px;font-family:inherit;font-size:1rem;color:var(--ink);
+  box-shadow:var(--shadow);outline:none;transition:border-color .2s,box-shadow .2s}
+.searchbar input:focus{border-color:var(--gold)}
+.searchbar .si{position:absolute;right:32px;top:29px;color:var(--muted);pointer-events:none}
+.searchbar input::placeholder{color:#a7a294}
+
+/* ---------- CATEGORY BAR ---------- */
+.catbar{position:sticky;top:0;z-index:30;background:rgba(243,239,230,.92);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:10px 0}
+.cats{display:flex;gap:9px;overflow-x:auto;padding:2px 18px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);
+  border-radius:999px;padding:9px 16px;font-family:inherit;font-weight:700;font-size:.9rem;
+  cursor:pointer;transition:.22s;white-space:nowrap}
+.chip:hover{border-color:var(--gold)}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink);
+  box-shadow:0 6px 16px rgba(24,58,52,.28)}
+
+/* ---------- SECTIONS ---------- */
+main{padding:8px 18px 130px}
+.section{margin-top:26px;scroll-margin-top:74px}
+.sec-head{display:flex;align-items:center;gap:12px;margin:0 2px 14px}
+.sec-head .en{font-family:'Cormorant Garamond',serif;color:var(--gold-2);font-size:.85rem;
+  letter-spacing:2px;text-transform:uppercase}
+.sec-head h2{font-size:1.28rem;font-weight:800;margin:0}
+.sec-head .rule{flex:1;height:1px;background:var(--line)}
+
+/* ---------- ITEM CARD ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:12px;margin-bottom:13px;display:flex;gap:13px;align-items:center;
+  box-shadow:var(--shadow);opacity:0;transform:translateY(16px);
+  transition:opacity .5s ease,transform .5s ease}
+.card.in{opacity:1;transform:none}
+.card .thumb{width:82px;height:82px;flex:0 0 auto;border-radius:15px;overflow:hidden;
+  background:linear-gradient(150deg,var(--paper-2),#dfd7c6);position:relative}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .thumb.ph{display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.card .thumb.ph svg{width:38px;height:38px;opacity:.55}
+.card .body{flex:1;min-width:0}
+.card .nm{font-weight:700;font-size:1.04rem;line-height:1.35}
+.card .ds{font-size:.82rem;color:var(--muted);margin-top:2px}
+.card .row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:10px}
+.price{font-weight:800;color:var(--ink);font-size:1.02rem;white-space:nowrap}
+.price .sar{font-family:'Cormorant Garamond',serif;font-size:.72rem;color:var(--gold-2);margin-inline-start:3px}
+.add{border:none;background:var(--ink);color:#fff;width:34px;height:34px;border-radius:11px;
+  font-size:1.3rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:transform .15s,background .2s;flex:0 0 auto}
+.add:hover{background:var(--ink-2)}
+.add:active{transform:scale(.82)}
+.no-result{text-align:center;color:var(--muted);padding:40px 0;font-weight:500;display:none}
+
+/* ---------- CART FAB ---------- */
+.fab{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:60;
+  max-width:var(--maxw);width:calc(100% - 40px);display:flex;gap:10px}
+.fab .wa{flex:0 0 auto;width:54px;height:54px;border-radius:16px;background:#25d366;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(37,211,102,.4);
+  text-decoration:none}
+.fab .wa svg{width:28px;height:28px;fill:#fff}
+.fab .cartbtn{flex:1;border:none;background:var(--ink);color:#fff;border-radius:16px;
+  font-family:inherit;font-weight:800;font-size:1.02rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 12px 28px rgba(24,58,52,.35);transition:transform .15s}
+.fab .cartbtn:active{transform:scale(.98)}
+.fab .cartbtn .count{background:var(--gold);color:#26140a;min-width:24px;height:24px;
+  border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+  font-size:.82rem;padding:0 6px}
+.fab .cartbtn .count.empty{opacity:.35}
+
+/* ---------- CART SHEET ---------- */
+.overlay{position:fixed;inset:0;background:rgba(20,40,36,.5);z-index:70;opacity:0;
+  visibility:hidden;transition:.28s}
+.overlay.open{opacity:1;visibility:visible}
+.sheet{position:fixed;left:50%;transform:translateX(-50%) translateY(100%);bottom:0;z-index:80;
+  width:100%;max-width:var(--maxw);background:var(--paper);border-radius:26px 26px 0 0;
+  padding:8px 18px calc(18px + env(safe-area-inset-bottom));max-height:82vh;overflow-y:auto;
+  transition:transform .34s cubic-bezier(.22,.8,.28,1);box-shadow:0 -14px 40px rgba(0,0,0,.25)}
+.sheet.open{transform:translateX(-50%) translateY(0)}
+.grip{width:44px;height:5px;border-radius:99px;background:#cfc7b6;margin:8px auto 4px}
+.sheet h3{margin:6px 2px 12px;font-size:1.22rem;font-weight:800;display:flex;align-items:center;gap:8px}
+.citem{display:flex;align-items:center;gap:12px;padding:11px 2px;border-bottom:1px solid var(--line)}
+.citem .cn{flex:1;font-weight:700;font-size:.98rem}
+.citem .cp{font-size:.8rem;color:var(--muted);font-weight:500}
+.qty{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}
+.qty button{border:none;background:#fff;width:32px;height:32px;font-size:1.2rem;cursor:pointer;color:var(--ink)}
+.qty button:active{background:var(--paper-2)}
+.qty span{min-width:26px;text-align:center;font-weight:800}
+.cart-empty{text-align:center;color:var(--muted);padding:34px 0;font-weight:500}
+.totals{display:flex;justify-content:space-between;align-items:center;margin:16px 2px 12px;
+  font-weight:800;font-size:1.15rem}
+.totals .sar{font-family:'Cormorant Garamond',serif;font-size:.8rem;color:var(--gold-2)}
+.send{width:100%;border:none;background:#25d366;color:#08351b;border-radius:15px;padding:15px;
+  font-family:inherit;font-weight:800;font-size:1.06rem;cursor:pointer;display:flex;
+  align-items:center;justify-content:center;gap:10px;transition:transform .15s}
+.send svg{width:22px;height:22px;fill:#08351b}
+.send:active{transform:scale(.98)}
+.send:disabled{opacity:.45;cursor:not-allowed}
+
+/* ---------- FOOTER ---------- */
+.foot{padding:26px 20px 34px;text-align:center;color:var(--muted);font-size:.82rem;background:var(--paper)}
+.foot .loc{color:var(--ink);font-weight:700;margin-bottom:4px}
+.foot a{color:var(--ink)}
+
+@media (prefers-reduced-motion:reduce){
+  .card{opacity:1!important;transform:none!important;transition:none}
+  .sheet{transition:none}
+}
+@media(min-width:520px){ body{padding:0} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="logo">
+        <svg class="mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <circle cx="32" cy="32" r="31" stroke="#c69b57" stroke-width="1.4" opacity=".6"/>
+          <text x="32" y="38" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="600" fill="#fff" letter-spacing="1">400</text>
+          <text x="32" y="49" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="7" fill="#c69b57" letter-spacing="2">COFFEE</text>
+          <circle cx="45" cy="18" r="3.4" fill="#c8492f"/>
+          <path d="M45 15 q4 -5 8 -3 q-2 5 -6 5" fill="#3f7d54"/>
+        </svg>
+        <div class="name">فورهاندرد ٤٠٠
+          <small>COFFEE 400 mg</small>
+        </div>
+      </div>
+      <div class="rating"><span class="star">★</span> ٤٫٥</div>
+    </div>
+    <p class="tagline">قهوة مختصّة في <b>خميس مشيط</b> — الحدّ اليومي الآمن من الكافيين ٤٠٠ ملجرام، وهي أربعة أكواب تقريبًا. نُحمّص لأجل هذه الأكواب.</p>
+    <div class="chips-note">☕ اختر القسم، ابحث عن مشروبك، وأضِفه للطلب</div>
+  </header>
+
+  <div class="searchbar">
+    <svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+    <input id="search" type="search" inputmode="search" placeholder="ابحث عن مشروب أو حلا…" aria-label="بحث">
+  </div>
+
+  <nav class="catbar">
+    <div class="cats" id="cats"></div>
+  </nav>
+
+  <main id="menu"></main>
+  <p class="no-result" id="noresult">لا يوجد صنف بهذا الاسم</p>
+
+  <footer class="foot">
+    <div class="loc">فورهاندرد ٤٠٠ · قهوة مختصّة</div>
+    طريق الأمير سلطان، خميس مشيط · تقييم ٤٫٥ على خرائط Google<br>
+    <a href="https://wa.me/966570648022">واتساب: 0570648022</a>
+  </footer>
+
+</div>
+
+<!-- CART FAB -->
+<div class="fab">
+  <a class="wa" href="https://wa.me/966570648022" aria-label="واتساب">
+    <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7L7 20.4A10 10 0 1012 2z"/></svg>
+  </a>
+  <button class="cartbtn" id="cartbtn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6L5 3H2"/></svg>
+    <span>طلبي</span>
+    <span class="count empty" id="count">0</span>
+  </button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="سلة الطلب">
+  <div class="grip"></div>
+  <h3>🧾 طلبي</h3>
+  <div id="cartlist"></div>
+  <div class="totals" id="totalsrow" style="display:none">
+    <span>الإجمالي</span>
+    <span><span id="total">0</span> <span class="sar">SAR</span></span>
+  </div>
+  <button class="send" id="send" disabled>
+    <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7L7 20.4A10 10 0 1012 2z"/></svg>
+    أرسل الطلب عبر واتساب
+  </button>
+  <p style="text-align:center;color:var(--muted);font-size:.76rem;margin:12px 2px 4px">الأسعار بالريال السعودي · تُؤكَّد النكهات والتوفّر عند الطلب</p>
+</div>
+
+<script>
+const WA="966570648022";
+const CUP='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h13v4a5 5 0 01-5 5H9a5 5 0 01-5-5z"/><path d="M17 10h2a2 2 0 010 4h-2"/><path d="M7 3v2M10 3v2M13 3v2"/></svg>';
+const ICE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1.3 11a1 1 0 01-1 .9H8.3a1 1 0 01-1-.9z"/><path d="M5 8h14M9 4h6l-1 4H10z"/></svg>';
+const CAKE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16v-7H4z"/><path d="M4 13c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M12 4v4M12 4l1.5 1.5"/></svg>';
+const DRIP='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4h10l-3 6H10z"/><path d="M10 10v4a2 2 0 004 0v-4"/><path d="M12 14v6"/></svg>';
+
+const DATA=[
+ {cat:"hot", en:"HOT COFFEE", ttl:"قهوة ساخنة", items:[
+   {n:"اسبريسو", d:"جرعة مركّزة من محمّصتنا المختصة", p:9, img:"assets/latte-glass.jpg"},
+   {n:"امريكانو", d:"اسبريسو ممدود بالماء الساخن", p:10, ic:CUP},
+   {n:"كورتادو", d:"توازن ناعم بين الاسبريسو والحليب", p:13, ic:CUP},
+   {n:"فلات وايت", d:"حليب مخملي وقهوة متوازنة", p:19, img:"assets/latte-blue-cup.jpg"},
+   {n:"كابتشينو", d:"رغوة كثيفة على قهوتنا المختصة", p:15, img:"assets/brand-board-latte.jpg"},
+   {n:"لاتيه", d:"لمسة حليب حريرية ونقشة لاتيه", p:15, img:"assets/latte-cake.jpg"},
+   {n:"اسبانش لاتيه حار", d:"حليب مكثّف يمنحه حلاوة دافئة", p:16, ic:CUP},
+ ]},
+ {cat:"iced", en:"ICED", ttl:"قهوة ومشروبات باردة", items:[
+   {n:"ايس لاتيه", d:"لاتيه بارد منعش فوق الثلج", p:16, img:"assets/iced-trio.jpg"},
+   {n:"ايس اسبانش لاتيه", d:"حلاوة الحليب المكثّف بلمسة باردة", p:18, ic:ICE},
+   {n:"ايس تي كركديه", d:"شاي كركديه منعش بحموضة خفيفة", p:18, img:"assets/iced-blue.jpg"},
+   {n:"ايس تشوكلت", d:"شوكولاتة باردة غنيّة", p:20, ic:ICE},
+ ]},
+ {cat:"filter", en:"FILTER · V60", ttl:"قهوة مختصّة مقطّرة", items:[
+   {n:"V60", d:"تقطير يدوي يُبرز نكهة الأصل", p:16, img:"assets/pour-v60.jpg"},
+   {n:"V60 آيس", d:"قهوة مقطّرة باردة صافية", p:18, ic:DRIP},
+   {n:"قهوة اليوم", d:"اختيار الباريستا لهذا اليوم", p:11, ic:DRIP},
+ ]},
+ {cat:"dessert", en:"DESSERTS", ttl:"الحلا", items:[
+   {n:"برالين بيكان", d:"طبقات جوز البيكان بالكراميل", p:20, img:"assets/hero-cup-dessert.jpg"},
+   {n:"تشيز كيك الماني", d:"تشيز كيك كثيف على الطريقة الألمانية", p:19, ic:CAKE},
+   {n:"مقلوبة المانجو", d:"حلا المانجو بطبقات كريمية", p:19, img:"assets/dessert-tray.jpg"},
+   {n:"كرنشي بايتس", d:"لقيمات مقرمشة بحجم صغير", p:7, ic:CAKE},
+   {n:"تشوكلت بار", d:"لوح شوكولاتة صغير مرافق للقهوة", p:7, ic:CAKE},
+ ]},
+];
+
+const cart={}; // key -> {item, qty}
+const catNames={hot:"ساخنة",iced:"باردة",filter:"مقطّرة",dessert:"حلا"};
+
+// build category chips
+const catsEl=document.getElementById('cats');
+const allChip=document.createElement('button');
+allChip.className='chip active';allChip.textContent='الكل';allChip.dataset.t='all';
+catsEl.appendChild(allChip);
+DATA.forEach(s=>{const b=document.createElement('button');b.className='chip';b.textContent=s.ttl;b.dataset.t=s.cat;catsEl.appendChild(b);});
+
+// build menu
+const menu=document.getElementById('menu');
+DATA.forEach(s=>{
+  const sec=document.createElement('section');sec.className='section';sec.id='sec-'+s.cat;sec.dataset.cat=s.cat;
+  sec.innerHTML=`<div class="sec-head"><h2>${s.ttl}</h2><span class="en">${s.en}</span><span class="rule"></span></div>`;
+  s.items.forEach(it=>{
+    const key=it.n;
+    const thumb= it.img
+      ? `<div class="thumb"><img loading="lazy" src="${it.img}" alt="${it.n}"></div>`
+      : `<div class="thumb ph">${it.ic||CUP}</div>`;
+    const card=document.createElement('article');
+    card.className='card';card.dataset.name=it.n;card.dataset.cat=s.cat;
+    card.innerHTML=`${thumb}
+      <div class="body">
+        <div class="nm">${it.n}</div>
+        <div class="ds">${it.d}</div>
+        <div class="row">
+          <div class="price">${it.p}<span class="sar">SAR</span></div>
+          <button class="add" aria-label="أضف ${it.n}">＋</button>
+        </div>
+      </div>`;
+    card.querySelector('.add').addEventListener('click',()=>addToCart(it));
+    sec.appendChild(card);
+  });
+  menu.appendChild(sec);
+});
+
+// scroll reveal (with failsafe so content is never stuck invisible)
+const allCards=[...document.querySelectorAll('.card')];
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px',threshold:.05});
+  allCards.forEach(c=>io.observe(c));
+  // reveal anything already within the first viewport immediately
+  requestAnimationFrame(()=>{allCards.forEach(c=>{if(c.getBoundingClientRect().top < window.innerHeight){c.classList.add('in');}});});
+  // hard failsafe: never leave a card invisible
+  setTimeout(()=>allCards.forEach(c=>c.classList.add('in')),1600);
+}else{
+  allCards.forEach(c=>c.classList.add('in'));
+}
+
+// ---- cart ----
+function addToCart(it){
+  if(!cart[it.n]) cart[it.n]={item:it,qty:0};
+  cart[it.n].qty++;
+  renderCart();bump();
+}
+function bump(){const c=document.getElementById('count');c.animate([{transform:'scale(1)'},{transform:'scale(1.4)'},{transform:'scale(1)'}],{duration:280});}
+function totalCount(){return Object.values(cart).reduce((a,c)=>a+c.qty,0);}
+function totalPrice(){return Object.values(cart).reduce((a,c)=>a+c.qty*c.item.p,0);}
+function renderCart(){
+  const n=totalCount();const cnt=document.getElementById('count');
+  cnt.textContent=n;cnt.classList.toggle('empty',n===0);
+  const list=document.getElementById('cartlist');list.innerHTML='';
+  const keys=Object.keys(cart).filter(k=>cart[k].qty>0);
+  if(!keys.length){
+    list.innerHTML='<div class="cart-empty">سلّتك فارغة — أضِف مشروبك المفضّل ☕</div>';
+    document.getElementById('totalsrow').style.display='none';
+    document.getElementById('send').disabled=true;return;
+  }
+  keys.forEach(k=>{
+    const {item,qty}=cart[k];
+    const row=document.createElement('div');row.className='citem';
+    row.innerHTML=`<div class="cn">${item.n}<div class="cp">${item.p} ريال × ${qty}</div></div>
+      <div class="qty"><button aria-label="نقص">－</button><span>${qty}</span><button aria-label="زيادة">＋</button></div>`;
+    const [minus,,plus]=row.querySelectorAll('button, span');
+    row.querySelectorAll('button')[0].addEventListener('click',()=>{cart[k].qty--;renderCart();});
+    row.querySelectorAll('button')[1].addEventListener('click',()=>{cart[k].qty++;renderCart();});
+    list.appendChild(row);
+  });
+  document.getElementById('total').textContent=totalPrice();
+  document.getElementById('totalsrow').style.display='flex';
+  document.getElementById('send').disabled=false;
+}
+
+// open/close sheet
+const overlay=document.getElementById('overlay'),sheet=document.getElementById('sheet');
+function openSheet(){renderCart();overlay.classList.add('open');sheet.classList.add('open');}
+function closeSheet(){overlay.classList.remove('open');sheet.classList.remove('open');}
+document.getElementById('cartbtn').addEventListener('click',openSheet);
+overlay.addEventListener('click',closeSheet);
+
+// send to whatsapp
+document.getElementById('send').addEventListener('click',()=>{
+  const keys=Object.keys(cart).filter(k=>cart[k].qty>0);if(!keys.length)return;
+  let msg='مرحبًا فورهاندرد ٤٠٠ 👋\nأرغب بطلب:\n';
+  keys.forEach(k=>{const{item,qty}=cart[k];msg+=`• ${item.n} ×${qty} — ${item.p*qty} ريال\n`;});
+  msg+=`\nالإجمالي: ${totalPrice()} ريال`;
+  window.open(`https://wa.me/${WA}?text=`+encodeURIComponent(msg),'_blank');
+});
+
+// ---- search ----
+const search=document.getElementById('search'),noresult=document.getElementById('noresult');
+search.addEventListener('input',()=>{
+  const q=search.value.trim();let any=false;
+  document.querySelectorAll('.card').forEach(c=>{
+    const hit=!q||c.dataset.name.includes(q);
+    c.style.display=hit?'':'none';if(hit)any=true;
+  });
+  document.querySelectorAll('.section').forEach(sec=>{
+    const vis=[...sec.querySelectorAll('.card')].some(c=>c.style.display!=='none');
+    sec.style.display=vis?'':'none';
+  });
+  noresult.style.display=any?'none':'block';
+});
+
+// ---- category filter + scroll-spy ----
+catsEl.addEventListener('click',e=>{
+  const b=e.target.closest('.chip');if(!b)return;
+  const t=b.dataset.t;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  b.classList.add('active');
+  search.value='';noresult.style.display='none';
+  document.querySelectorAll('.card').forEach(c=>c.style.display='');
+  if(t==='all'){
+    document.querySelectorAll('.section').forEach(s=>s.style.display='');
+  }else{
+    document.querySelectorAll('.section').forEach(s=>s.style.display=(s.dataset.cat===t)?'':'none');
+    const sec=document.getElementById('sec-'+t);
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+});
+</script>
+</body>
+</html>
